@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var itemsRouter = require('./routes/items');
+var storeRouter = require('./routes/store');
 
 var compression = require('compression');
 var helmet = require('helmet');
@@ -30,7 +30,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/items', itemsRouter);
+app.use('/store', storeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
